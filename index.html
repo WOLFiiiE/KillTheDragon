@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8">  
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<script src="script.js"></script>
+		<script src="js/function.js"></script>
+		<script src="./js/main.js" type="module"></script>
 		<title>KILL THE DRAGON</title>
 	</head>
 
@@ -12,8 +14,7 @@
 		<!-- ############################ SOUND ############################## -->
 
 		<audio id="themeSong" loop>
-			<source src="themeSong.ogg" type="audio/ogg">
-			<source src="themeSong.mp3" type="audio/mpeg">
+			<source src="music/themeSong.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
 
@@ -31,11 +32,39 @@
 				</span> 
 
 	    			<button id="soundButton" onclick="soundControl()">
-	    				<img id="imageFill" src="soundOff.png"> 
+	    				<img id="imageFill" src="visual/soundOff.png"> 
 	    			</button>
 	    		</div>
 	    	</div>
 	    </header>
+
+		<!--##################### PAGE ZERO ########################################### -->
+
+        <div class="outerContain" id="pg00">
+        	<div class="innerContain">
+
+        		<div class="chroniclePart">
+        			<span class="h2Styling">
+						TEST YOUR MIGHT !
+        			</span>
+        		</div>
+
+				<img class="mainPic" src="visual/main.png">
+
+				<p>
+					Are you humanity's last hope?<br/>
+					Will the Hell-bred Beasts be defeated?<br/>
+					Is paradise attainable?<br/>
+					Will you <span style="color: red;">KILL THE DRAGON</span>?
+				</p>
+
+				<div class="buttons">
+					<button  id="nextButton"><a href="https://github.com/WOLFiiiE" style="color: blue;"> GITHUB </a></button>
+					<button  id="chargeButton01" onclick="nextPt('pg01','pg00')"> CHARGE </button>   
+				</div>
+
+	        </div>
+    	</div>		
 
 		<!--##################### PAGE ONE ########################################### -->
 
@@ -49,33 +78,33 @@
         		</div>
 
 		        <div id="pt01" class="pt">
-		        	<img class="pic" src="pt1.jpeg">
+		        	<img class="pic" src="visual/pt1.jpeg">
 
 		        	<p>
 		        		The world had forgotten terror. Just a mere illusion of the heavens. Flowers Bloomimg, children smiling and harmony in the air. Human beings were among the earthy beings enjoying such a paradise and thriving gracefully in it. Unfortunately, Humanity did not know how to do away with its insticts of selfishness, greed and lust. Though humanity had its flaws, the world was still one of bliss. It all changed when humanity committed the most foul transgression. Humans had forgotten god!
 		        	</p>
 
 		        	<div class="buttons">
-		        		<button  class="nextButton" onclick="nextPt('pt02','pt01')"> NEXT </button>
+		        		<button  id="nextButton" onclick="nextPt('pt02','pt01')"> NEXT </button>
 		        	</div>
 		        </div>
 
 		        <div id="pt02" class="pt">
 
-		        	<img class="pic" src="pt2.jpeg"> 
+		        	<img class="pic" src="visual/pt2.jpeg"> 
 
 		        	<p>
 		        		Since then, us of the underworld took over. We have summoned Beasts of the underworld to reek terror and chaos. Humanity deserves to sufffer. Each day we live in delights witnessing the souls that we have tormented. What once was a perfect world is now a slaughter house for us. We have turned seas into blood pools and created mountains of corpses. They deserved it.
 		        	</p>
 
 		        	<div class="buttons">
-		        		<button  class="nextButton" onclick="nextPt('pt03','pt02')"> NEXT </button>
+		        		<button  id="nextButton" onclick="nextPt('pt03','pt02')"> NEXT </button>
 		        	</div>
 		        </div>
 
 		        <div id="pt03" class="pt">
 
-		        	<img class="pic" src="pt3.jpeg">
+		        	<img class="pic" src="visual/pt3.jpeg">
 
 		        	<p>
 		        		In this new haven of pain and tears was hope for humanity. Human warriors had emerged to fight us off. But do they really stand a chance?
@@ -84,12 +113,9 @@
 		        	<h2> KILL THE DRAGON!<h2>
 
 		        	<div class="buttons">
-		        		<button  class="nextButton" onclick="nextPt('pt01','pt03')"> BACK </button>
+		        		<button  id="nextButton" onclick="nextPt('pt01','pt03')"> BACK </button>
+						<button  id="chargeButton02" onclick="nextPt('pg02','pg01')"> CHARGE </button>
 		        	</div>	   
-		        </div>
-
-		        <div class="navButtons">
-		        	<button  id="nav01" onclick="nextPt('pg02','pg01')"> CHARGE </button>
 		        </div>
 
 	        </div>
@@ -113,101 +139,78 @@
 
         			<div class="nameBar">
         				   <input id="dNameSpace" type="text" placeholder="Name the Beast">
-                           <div  id="dNameButton" onclick="changeDragonName()">×</div>        				
+                           <div  id="dNameButton">×</div>        				
         			</div>
 
-        			<div class="innerMenu">
-
-        				<div class="option">
-        					<img src="redDragon.gif" class="optionPic">
-
+        			<div id="dOptions" class="innerMenu">
+        				<div id="d1">
+        					<img src="visual/redDragon.gif" class="optionPic">
         					<div class="optionTag">
         						<i>Blood Dragon</i>
         					</div>
-
         				</div>
 
-        				<div class="option">
-        					<img src="blueDragon.gif" class="optionPic">
-
+        				<div id="d2">
+        					<img src="visual/blueDragon.gif" class="optionPic">
         					<div class="optionTag">
         						<i>Soul Dragon</i>
         					</div>
-
         				</div>
 
-        				<div class="option">
-        					<img src="greenDragon.gif" class="optionPic">
-
+        				<div id="d3">
+        					<img src="visual/greenDragon.gif" class="optionPic">
         					<div class="optionTag">
         						<i>Death Dragon</i>
         					</div>
-
         				</div>
 
-        				<div class="option">
-        					<img src="blackDragon.gif" class="optionPic">
-
+        				<div id="d4">
+        					<img src="visual/blackDragon.gif" class="optionPic">
         					<div class="optionTag">
         						<i>Shadow Dragon</i>
         					</div>
-
         				</div>
-        				
         			</div>	        			
         		</div>
 
         		<!--##################### WARRIORS ########################################### -->
 
-
         		<div class="menu" id="warriorMenu">
         			<h3 id="warriorID">SELECT WARRIOR</h3>
 
         			<div class="nameBar">
-        				   <input id="wNameSpace" type="text" placeholder="Name your Warrior">
-                           		   <div  id="wNameButton" onclick="changeWarriorName()">×</div>        				
+        					<input id="wNameSpace" type="text" placeholder="Name your Warrior">
+                        	<div  id="wNameButton">×</div>        				
         			</div>
 
-        			<div class="innerMenu">
-
-        				<div class="option2" >
-        					<img src="redWarrior.gif" class="optionPic2">
-
+        			<div id="wOptions" class="innerMenu">
+        				<div id="w1">
+        					<img src="visual/redWarrior.gif" class="optionPic2">
         					<div class="optionTag">
         						<i>Crimson Sorcerer</i>
         					</div>
-
         				</div>
 
-
-        				<div class="option2">
-        					<img src="blueWarrior.gif" class="optionPic2">
-
+        				<div id="w2" >
+        					<img src="visual/blueWarrior.gif" class="optionPic2">
         					<div class="optionTag">
         						<i>Sacred Knight</i>
         					</div>
-
         				</div>
 
-
-        				<div class="option2">
-        					<img src="goldWarrior.gif" class="optionPic2">
-
+        				<div id="w3" >
+        					<img src="visual/goldWarrior.gif" class="optionPic2">
         					<div class="optionTag">
         						<i>Imperial Defender</i>
         					</div>
-
         				</div>
 
-        				<div class="option2">
-        					<img src="blackWarrior.gif" class="optionPic2">
-
+        				<div id="w4" >
+        					<img src="visual/blackWarrior.gif" class="optionPic2">
         					<div class="optionTag">
         						<i>Dark Templar</i>
         					</div>
-
         				</div>
-        				
         			</div>
         			
         		</div>	
@@ -219,21 +222,16 @@
 		        	<div class="difficulyMenu">
 		        		<h3>SELECT HARDSHIP</h3>
 		        		<div class="hardshipOptions">
-			  	        <!-- <input id="difficultySpace" type="text" placeholder="Name your Warrior"> -->
-
 				            <select id="difficultySpace" name="difficult">
 							 	<option value="easy">Cutting butter with a hot sword</option>
 							  	<option value="normal" selected>A balanced experience</option>
 								<option value="hard">My mom didn't raise no wimp</option>
-								<option value="hell">Lmao literally hell</option>
-								<option value="hell">Pov: Your name is Caleb :)</option>
+								<option value="veryHard">Lmao literally hell</option>
+								<option value="hell">Pov: Your name is Caleb >:)</option>
 							</select>
-
-                       		<div  id="difficultyButton" onclick="changeWarriorName()">×</div>
-		        		</div>
-		        		
+                       		<div  id="difficultyButton">×</div>
+		        		</div>		
 		        	</div>
-
 		        	<button  id="nav02" onclick="nextPt('pg03','pg02')">CHARGE</button>
 		        </div>
 	        </div>
@@ -254,7 +252,7 @@
         			</span>
 
         			<button id="soundButton" onclick="timeControl()">
-        				<img id="imageFill02" src="showTime.png"> 
+        				<img id="imageFill02" src="visual/showTime.png"> 
         			</button>
         		</div>
 
@@ -263,7 +261,7 @@
 
         			<div id="warrriorStats">
         				<div class="statImage">
-        					<img id="sImage" src="#">
+        					<img id="wImage" width="100%" height="100%" src="#" alt="WARRIOR IMG">
         				</div>
 
         				<span class="healthStat">
@@ -279,12 +277,12 @@
 
         			<span class="middlePart">
         				<!-- SOMETHING -->
-        				<img class="mPart" src="torch01.gif">
+        				<img class="mPart" src="visual/torch01.gif">
         			</span>
 
 	        		<div id="dragonStats">
         				<div class="statImage">
-        					<img id="sImage" src="#">
+        					<img id="dImage"  width="100%" height="100%" src="#" alt="DRAGON IMG">
         				</div>
 
         				<span class="healthStat">
@@ -299,30 +297,14 @@
         			</div>
     			</div>
 
-
     			<div class="gameScreen">
-
-    				<div id="screen">
-
-
-    				</div>	
-
-
+    				<div id="screen"></div>	
     				<div class="gameControls">
-
   						<select id="itemSelect" name="items">
-						 	<option value="Weapon">Dagger</option>
-						  	<option value="Weapon" selected>Sword</option>
-							<option value="Weapon">Axe</option>
-							<option value="Weapon">Beans</option>
-							<option value="Potion">Heal Potion</option>
 						</select>
-    					
     					<button id="useButton">USE</button>
-    					
     					<button id="dodgeButton">DODGE</button>
     				</div>
-
     			</div>
 
     		</div>

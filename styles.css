@@ -1,7 +1,6 @@
 body 
 {
-    background-image: url(background.jpeg);
-	
+    background-image: url(visual/background.jpeg);
 }
 
 *{
@@ -94,8 +93,12 @@ h2{
 	padding-top: 10px;
 
 	width: 100%;
-	height: 900px;
+	height: 100vh;
 
+}
+
+#pg00 .innerContain{
+	height: 700px;
 }
 
 .innerContain{
@@ -116,8 +119,14 @@ h2{
 	height: 300px;
 }
 
-p{
+.mainPic{
+	width: 550px;
+	height: 400px;
 
+	margin-top: 20px;
+}
+
+p{
 	padding: 30px;
 	width: 550px;
 }
@@ -130,7 +139,6 @@ p{
 	margin-top: 20px;
 
 	height: 590px;
-
 }
 
 /*############## TOP PART #######################*/
@@ -144,7 +152,6 @@ p{
 	width: 550px;
 
 	margin-top: 20px;
-
 }
 
 /*############## SOUND CONTROLS #################*/
@@ -177,6 +184,18 @@ p{
 	justify-content: right;
 	width: 550px;
 
+	flex-flow: row;
+}
+
+.buttons button{
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 100px;
+	font-weight: 900;
+
+	margin: 0 0 0 3%;
 }
 
 .navButtons{
@@ -188,37 +207,36 @@ p{
 	width: 550px;
 }
 
-#nav01{
-	display: none;
-	justify-content: center;
-	align-items: center;
-
-	height: 35px;
-	width: 100px;
-	font-weight: 900;
-
+#chargeButton01, #chargeButton02{
 	background-color: maroon;
 	color: white;
-	border: 2px solid black;
-
+	border: 2px solid black;	
 }
 
-#nav01:hover{
+#chargeButton01{
+	display: flex;
+}
+
+#chargeButton02{
+	display: none;
+}
+
+
+#chargeButton01:hover, #chargeButton02:hover{
 	box-shadow: 0px 0px 5px 5px maroon;
 }
 
 
-.nextButton{
-	height: 35px;
-	width: 100px;
-	font-weight: bolder;
-
+#nextButton{
 	background-color: darkgrey;
+	border: 2px solid black;	
 }
 
-.nextButton:hover{
+#nextButton:hover{
 	box-shadow: 0px 0px 5px 5px white;
 }
+
+/*############# PAGE 01 ( PARTS ) ###############*/
 
 #pt01{
 	display: flex;
@@ -234,7 +252,11 @@ p{
 
 /*############# PAGES ###############*/
 
-#pg02{
+#pg01{
+	display: none;
+}
+
+#pg00{
 	display: none;
 }
 
@@ -384,7 +406,7 @@ h3{
 	height: 220px;
 }
 
-.option{
+#d1, #d2, #d3, #d4{
 	display: flex;
 	justify-content: center;
 	flex-flow: column;
@@ -403,13 +425,17 @@ h3{
     -webkit-transition: transform 0.5s ease;
 }
 
-.option:hover{
+#d1:hover, #d2:hover, #d3:hover, #d4:hover{
 	box-shadow: 0px 0px 5px 5px red;
 	transform: scale(1.05,1.05);
-
 }
 
-.option2{
+.dSelected{
+	box-shadow: 0px 0px 5px 5px red;
+	transform: scale(1.05,1.05);
+}
+
+#w1, #w2, #w3, #w4{
 	display: flex;
 	justify-content: center;
 	flex-flow: column;
@@ -428,10 +454,14 @@ h3{
     -webkit-transition: transform 0.5s ease;
 }
 
-.option2:hover{
+#w1:hover, #w2:hover, #w3:hover, #w4:hover{
 	box-shadow: 0px 0px 5px 5px lightskyblue;
 	transform: scale(1.05,1.05);
+}
 
+.wSelected{
+	box-shadow: 0px 0px 5px 5px lightskyblue;
+	transform: scale(1.05,1.05);
 }
 
 .optionPic{
@@ -653,9 +683,11 @@ h3{
 	width: 100%;
 
 	margin: 0;
+
+	background-color: black;
 }
 
-#sImage{
+.sImage{
 	width: 100%;
 	height: 100%;
 }
@@ -771,8 +803,13 @@ h3{
 }
 
 #itemSelect{
+
 	width: 40%;
 	height: 60%;
+}
+
+option{
+	display: flex;
 }
 
 #useButton{
